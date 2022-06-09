@@ -370,14 +370,9 @@ public class a : MonoBehaviour
         //공격 거리보다 둘간의 거리가 멀어졌다면 
         if (distance > AtkRange + 0.5f)
         {
-            //타겟과의 거리가 멀어졌다면 다시 타겟으로이동
             skullState = SkullState.GoTarget;
-        }else if (distance < AtkRange + 1.0f)
-        {
-            Debug.Log("a");
-            skullState = SkullState.Wait;
         }
-      
+  
     }
  
 

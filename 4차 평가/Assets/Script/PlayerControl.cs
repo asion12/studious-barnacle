@@ -81,7 +81,6 @@ public class PlayerControl : MonoBehaviour
     {
         Move();
         a();
-        Debug.Log(GetVelocitySpd());
         BodyDirectionChange();
         AnimationClipCtrl();
         ckAnimationState();
