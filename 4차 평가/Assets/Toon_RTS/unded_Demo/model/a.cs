@@ -346,9 +346,11 @@ public class a : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerAtk") == true)
         {
-            hp -= 10;
+            hp -= 50;
+            Debug.Log(hp);
             if (hp > 0)
             {
+               
                 Instantiate(effectDamage, other.transform.position, Quaternion.identity);
                 skullAnimation.CrossFade(DamageAnimClip.name);
                 effectDamageTween();
@@ -356,7 +358,9 @@ public class a : MonoBehaviour
             }
             else
             {
+                Debug.Log("end");
                 skullState = SkullState.Die;
+                Destroy(gameObject, 5);
             }
         }
     }

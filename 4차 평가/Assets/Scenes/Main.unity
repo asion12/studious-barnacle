@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
   monsters: []
-  spawnMaxCnt: 10
+  spawnMaxCnt: 2
 --- !u!4 &260491439
 Transform:
   m_ObjectHideFlags: 0
@@ -877,9 +877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60392edaf8755b04cb6c9adcb4c1ae10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpd: 6
-  runMoveSpd: 3.5
-  DirectionRotateSpd: 100
+  moveSpd: 2
+  runMoveSpd: 3
+  DirectionRotateSpd: 10
   BodyRotateSpd: 2
   VelocityChangeSpd: 0.1
   animationClipIdle: {fileID: 7400000, guid: 83b3273552888f24e80cc7c4ba3222b4, type: 2}
