@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+
+    //플레이어 체력
+    public static int Playerhp = 1000;
     [Header("속성")]
     //캐릭터 이동속도 설정
     [Tooltip("캐릭터 이동속도 설정")]

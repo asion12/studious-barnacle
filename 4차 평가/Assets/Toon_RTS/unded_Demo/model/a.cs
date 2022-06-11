@@ -104,7 +104,7 @@ public class a : MonoBehaviour
         //공격 애니메이션 이벤트 추가
         OnAnimationEvent(AtkAnimClip, "OnAtkAnmationFinished");
         OnAnimationEvent(DamageAnimClip, "OnDmgAnmationFinished");
-        OnAnimationEvent(DieAnimClip, "OnDieAnmationFinished");
+        OnAnimationEvent(DieAnimClip, "DieAnimClip");
 
         skinnedMeshRenderer = skullTransform.Find("UD_light_infantry").GetComponent<SkinnedMeshRenderer>();
     }
@@ -214,6 +214,9 @@ public class a : MonoBehaviour
                     {
                         //공격상태로 변경합니.
                         skullState = SkullState.Atk;
+                        //플레이어 와 충돌시 hp담
+                 
+                       
                         //여기서 끝냄
                         return;
                     }

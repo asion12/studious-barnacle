@@ -343,7 +343,7 @@ MonoBehaviour:
   MoveAnimClip: {fileID: 7400000, guid: 4f3a5f9ab51031243aca3cc4452414d6, type: 2}
   AtkAnimClip: {fileID: 7400000, guid: 01f745dffd482374282fd18371332055, type: 2}
   DamageAnimClip: {fileID: 7400000, guid: 01f745dffd482374282fd18371332055, type: 2}
-  DieAnimClip: {fileID: 7400000, guid: e9ce7d360da749d4f9a011ba879d104c, type: 2}
+  DieAnimClip: {fileID: 7400000, guid: 57af695ff81f3f54487b1d9a6f79b8e3, type: 2}
   hp: 100
   AtkRange: 1.5
   effectDamage: {fileID: 5313143000657870791, guid: bd84353e3468d1a489c0c66f4dec063a, type: 3}

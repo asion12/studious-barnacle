@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spawMonster : MonoBehaviour
 {
+    public Transform tras = null;
     //생성할 몬스터 오브젝트
     public GameObject monsterSpawner = null;
 
@@ -25,7 +26,7 @@ public class spawMonster : MonoBehaviour
         }
 
         //생성할 위치를 지정한다. 초기 높이만 1000 나머지 .x,z는 랜덤 
-        Vector3 vecSpawn = new Vector3(105f, 100f, 105f);
+        Vector3 vecSpawn = new Vector3(tras.position.x,tras.position.y, tras.position.z);
 
         //생성할 임시 높이에서 아래방향으로 Raycast를 통해 지형까지 높이 구하기
         Ray ray = new Ray(vecSpawn, Vector3.down);

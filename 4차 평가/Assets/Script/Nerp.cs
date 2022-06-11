@@ -39,9 +39,10 @@ public class Nerp : MonoBehaviour
                 if (degree <= angleRange / 2f)
                 {
                         isCollision = true;
-                       if (isCollision == true)
+                       if (isCollision == true) 
                       {
-                        if(Input.GetKeyDown(KeyCode.Space)){
+                        if (Input.GetKeyDown(KeyCode.Space))
+                        {
                             Debug.Log("a");
                             HOTween.Init(true, true, true);
 
@@ -49,12 +50,13 @@ public class Nerp : MonoBehaviour
                                 .Prop("aniStr", "Hello World !! See You Nice Day")
                                 .Loops(-1, LoopType.Yoyo));
 
-                            HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0,transform.position.z+10));
+                            HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0, transform.position.z + 10));
 
                             HOTween.To(this, 2f, new TweenParms()
                                 .Prop("aniFloat", 10f)
                                 .Loops(-1, LoopType.Restart));
                         }
+                        
                       }
                 }
 

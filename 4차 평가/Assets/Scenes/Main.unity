@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc038bfd300f8df4fbd35d7ffc05893c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tras: {fileID: 260491439}
   monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
   monsters: []
   spawnMaxCnt: 2
@@ -173,6 +174,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &269038270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269038272}
+  - component: {fileID: 269038271}
+  m_Layer: 0
+  m_Name: Spawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &269038271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269038270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc038bfd300f8df4fbd35d7ffc05893c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tras: {fileID: 269038272}
+  monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
+  monsters: []
+  spawnMaxCnt: 2
+--- !u!4 &269038272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269038270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 80, y: 0.117965445, z: 189.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369798922
 GameObject:
@@ -249,6 +297,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432087612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432087614}
+  - component: {fileID: 432087613}
+  m_Layer: 0
+  m_Name: Spawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &432087613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432087612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc038bfd300f8df4fbd35d7ffc05893c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tras: {fileID: 432087614}
+  monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
+  monsters: []
+  spawnMaxCnt: 2
+--- !u!4 &432087614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432087612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 119.6, y: 0.117965445, z: 226.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &458458153
 GameObject:
@@ -855,6 +950,53 @@ Transform:
   m_Father: {fileID: 1922542882}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1694826652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694826654}
+  - component: {fileID: 1694826653}
+  m_Layer: 0
+  m_Name: Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1694826653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694826652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc038bfd300f8df4fbd35d7ffc05893c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tras: {fileID: 1694826654}
+  monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
+  monsters: []
+  spawnMaxCnt: 2
+--- !u!4 &1694826654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694826652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.42, y: 0.117965445, z: 123.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1922542881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 840310608147639451, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
@@ -877,10 +1019,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60392edaf8755b04cb6c9adcb4c1ae10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpd: 2
-  runMoveSpd: 3
-  DirectionRotateSpd: 10
-  BodyRotateSpd: 2
+  moveSpd: 3
+  runMoveSpd: 5
+  DirectionRotateSpd: 100
+  BodyRotateSpd: 100
   VelocityChangeSpd: 0.1
   animationClipIdle: {fileID: 7400000, guid: 83b3273552888f24e80cc7c4ba3222b4, type: 2}
   animationClipWalk: {fileID: 7400000, guid: 59547d133b25f6344baa4a7f0415fa12, type: 2}
@@ -904,10 +1046,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0181ca5052c5013418304afdc93c80db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanstHit: 4
+  distanstHit: 3
   target: {fileID: 0}
-  angleRange: 25
-  radius: 4
+  angleRange: 30
+  radius: 3
+--- !u!1 &2018222784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018222786}
+  - component: {fileID: 2018222785}
+  m_Layer: 0
+  m_Name: Spawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2018222785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018222784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc038bfd300f8df4fbd35d7ffc05893c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tras: {fileID: 2018222786}
+  monsterSpawner: {fileID: 4470423894255321007, guid: d17affb8d77daaf4b8813a01e8adc6b8, type: 3}
+  monsters: []
+  spawnMaxCnt: 2
+--- !u!4 &2018222786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018222784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 115.58, y: 0.117965445, z: 146.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2060130347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -915,6 +1104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 840310608147636705, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840310608147639451, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
       propertyPath: m_Name
       value: TT_RTS_Demo_Character
@@ -962,6 +1155,46 @@ PrefabInstance:
     - target: {fileID: 840310608147935483, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.002357483
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000021755695
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000579834
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7065862
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70737857
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.012085833
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.014336384
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.67401
+      objectReference: {fileID: 0}
+    - target: {fileID: 840310608147936779, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 69.533
       objectReference: {fileID: 0}
     - target: {fileID: 840310608634449843, guid: a60df22e3d0a500498c6f3e906502cf6, type: 3}
       propertyPath: orthographic
