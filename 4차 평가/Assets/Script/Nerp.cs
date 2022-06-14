@@ -1,31 +1,35 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Holoville.HOTween;
 public class Nerp : MonoBehaviour
 {
-    //¡ˆ¡§¿Ã¿›æ∆
+    //ÏßÄÏ†ïÏù¥ÏûñÏïÑ
     RaycastHit Hit;
     public float distanstHit = 3f;
     public Transform target;    
     public float angleRange = 30f;
     public float radius = 3f;
-
     Color _blue = new Color(0f, 0f, 1f, 0.2f);
     Color _red = new Color(1f, 0f, 0f, 0.2f);
 
     bool isCollision = false;
-
+    private void Start()
+    {
+        GameObject gameObject = GameObject.Find("Variables¬†Ïª¥Ìè¨ÎÑåÌä∏Í∞Ä Î∂ÄÏ∞©Îêú Ïò§Î∏åÏ†ùÌä∏");
+        PlayerControl vari = gameObject.GetComponent<PlayerControl>();
+    }
     void Update()
     {
        
+        
         if (Physics.Raycast(transform.position,transform.forward,out Hit,distanstHit))
         {
-            //≥™øÕ ¿˚¿« ∞≈∏Æ√º≈©
+            //ÎÇòÏôÄ Ï†ÅÏùò Í±∞Î¶¨Ï≤¥ÌÅ¨
             Vector3 interV = Hit.transform.position - transform.position;
             
-            //∞≈∏Æ∞° π›¡ˆ∏ß∫∏¥Ÿ ¿€¿∏∏È 
+            //Í±∞Î¶¨Í∞Ä Î∞òÏßÄÎ¶ÑÎ≥¥Îã§ ÏûëÏúºÎ©¥ 
             if (interV.magnitude <= radius)
             {
 
@@ -43,18 +47,21 @@ public class Nerp : MonoBehaviour
                       {
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
-                            Debug.Log("a");
-                            HOTween.Init(true, true, true);
+                            if (GameManager.combo.mycombo>100)
+                            {
+                                GameManager.combo.mycombo = -100;
+                                Debug.Log("a");
+                                HOTween.Init(true, true, true);
 
-                            HOTween.To(this, 2f, new TweenParms()
-                                .Prop("aniStr", "Hello World !! See You Nice Day")
-                                .Loops(-1, LoopType.Yoyo));
 
-                            HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0, transform.position.z + 10));
 
-                            HOTween.To(this, 2f, new TweenParms()
-                                .Prop("aniFloat", 10f)
-                                .Loops(-1, LoopType.Restart));
+                                HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0, transform.position.z + 15));
+
+                                HOTween.To(this, 2f, new TweenParms()
+                                    .Prop("aniFloat", 10f)
+                                    .Loops(-1, LoopType.Restart));
+                            }
+                         
                         }
                         
                       }
@@ -69,7 +76,7 @@ public class Nerp : MonoBehaviour
         }
     }
      
-
+  
 
     private void OnDrawGizmos()
     {

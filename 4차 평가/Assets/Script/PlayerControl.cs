@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
-    //플레이어 체력
-    public static int Playerhp = 1000;
+    
     [Header("속성")]
     //캐릭터 이동속도 설정
     [Tooltip("캐릭터 이동속도 설정")]
@@ -78,20 +77,40 @@ public class PlayerControl : MonoBehaviour
         SetAnimationEvent(animationClipAtk_2, "OnPlayerAttackFinshed");
         SetAnimationEvent(animationClipAtk_3, "OnPlayerAttackFinshed");
         SetAnimationEvent(animationClipAtk_4, "OnPlayerAttackFinshed");
+        InvokeRepeating("StackUp", 2f, 10f);
     }
 
     void Update()
     {
+       
         Move();
         a();
         BodyDirectionChange();
         AnimationClipCtrl();
         ckAnimationState();
         InputAttackCtrl();
+       
     }
     /// <summary>
     /// 캐릭터 이동 함수
     /// </summary>
+    /// 
+    private void OnGUI()
+    {
+        var labelStyle = new GUIStyle();
+        labelStyle.fontSize = 30;
+        labelStyle.normal.textColor = Color.white;
+
+        GUILayout.Label("현재 콤보 : " + GameManager.combo.mycombo, labelStyle);
+    }
+    void StackUp()
+    {
+        
+        if (GameManager.combo.mycombo <= 999)
+        {
+            GameManager.combo.mycombo += 30;
+        } 
+    }
     void Move()
     {
         //메인카메라 Transform
@@ -154,22 +173,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-        if (characterCtrl != null && characterCtrl.velocity != Vector3.zero)
-        {
-            var labelStyle = new GUIStyle();
-            labelStyle.fontSize = 30;
-            labelStyle.normal.textColor = Color.white;
-            //현재 속도
-            float _getVelocity = GetVelocitySpd();
-            GUILayout.Label("현재속도 : " + _getVelocity.ToString(), labelStyle);
-            //현재 캐릭터 방향
-            GUILayout.Label("현재 방향 : " + characterCtrl.velocity.ToString(), labelStyle);
-            //현재 캐릭터 속도
-            GUILayout.Label("캐릭터 속도 : " + CurrentVelocitySpd.magnitude.ToString(), labelStyle);
-        }
-    }
+  
 
     /// <summary>
     /// 애니메이션 재생 함수
