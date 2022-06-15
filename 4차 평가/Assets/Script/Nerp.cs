@@ -13,12 +13,14 @@ public class Nerp : MonoBehaviour
     public float radius = 3f;
     Color _blue = new Color(0f, 0f, 1f, 0.2f);
     Color _red = new Color(1f, 0f, 0f, 0.2f);
-
+    bool coms = false;
     bool isCollision = false;
+    GameObject VgameObject = null;
+    PlayerControl vari = null;
     private void Start()
     {
-        GameObject gameObject = GameObject.Find("Variables 컴포넌트가 부착된 오브젝트");
-        PlayerControl vari = gameObject.GetComponent<PlayerControl>();
+        VgameObject = GameObject.Find("Variables 컴포넌트가 부착된 오브젝트");
+        vari = gameObject.GetComponent<PlayerControl>();
     }
     void Update()
     {
@@ -47,22 +49,28 @@ public class Nerp : MonoBehaviour
                       {
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
-                            if (GameManager.combo.mycombo>100)
+                            coms = true;
+                            if (coms)
                             {
-                                GameManager.combo.mycombo = -100;
-                                Debug.Log("a");
-                                HOTween.Init(true, true, true);
+                                if (GameManager.instance.mycombo > 100)
+                                {
+                                    GameManager.instance.mycombo=-100;
+                                    Debug.Log("a");
+                                    HOTween.Init(true, true, true);
 
 
 
-                                HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0, transform.position.z + 15));
+                                    HOTween.To(transform, 1, "position", new Vector3(transform.position.x, 0, transform.position.z + 15));
 
-                                HOTween.To(this, 2f, new TweenParms()
-                                    .Prop("aniFloat", 10f)
-                                    .Loops(-1, LoopType.Restart));
+                                    HOTween.To(this, 2f, new TweenParms()
+                                        .Prop("aniFloat", 10f)
+                                        .Loops(-1, LoopType.Restart));
+                                    coms = false;
+                                }
+
                             }
-                         
                         }
+                        
                         
                       }
                 }

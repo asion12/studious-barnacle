@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4470423894252139225}
   m_Layer: 0
   m_Name: UD_light_infantry
-  m_TagString: Untagged
+  m_TagString: SkullSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,8 @@ Animation:
   - {fileID: 7400000, guid: e9ce7d360da749d4f9a011ba879d104c, type: 2}
   - {fileID: 7400000, guid: 4f3a5f9ab51031243aca3cc4452414d6, type: 2}
   - {fileID: 7400000, guid: 01f745dffd482374282fd18371332055, type: 2}
+  - {fileID: 7400000, guid: 01f745dffd482374282fd18371332055, type: 2}
+  - {fileID: 7400000, guid: 57af695ff81f3f54487b1d9a6f79b8e3, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -595,11 +597,11 @@ GameObject:
   - component: {fileID: 4470423894255608797}
   m_Layer: 0
   m_Name: Bip001 R Hand
-  m_TagString: Untagged
+  m_TagString: SkullSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4470423894255608797
 Transform:
   m_ObjectHideFlags: 0

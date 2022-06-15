@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Holoville.HOTween;
 public class PlayerControl : MonoBehaviour
 {
-
-    
+    //캐릭터 타격시 색 변환 준비
+    private Tweener effectTweener = null;
+    private SkinnedMeshRenderer skinnedMeshRenderer = null;
     [Header("속성")]
     //캐릭터 이동속도 설정
     [Tooltip("캐릭터 이동속도 설정")]
@@ -35,7 +36,7 @@ public class PlayerControl : MonoBehaviour
     public AnimationClip animationClipAtk_2 = null;
     public AnimationClip animationClipAtk_3 = null;
     public AnimationClip animationClipAtk_4 = null;
-
+    
     //animation component 캐싱 준비
     private Animation animationPlayer = null;
     //캐릭터 상태
@@ -101,14 +102,17 @@ public class PlayerControl : MonoBehaviour
         labelStyle.fontSize = 30;
         labelStyle.normal.textColor = Color.white;
 
-        GUILayout.Label("현재 콤보 : " + GameManager.combo.mycombo, labelStyle);
+        GUILayout.Label("현재 콤보 : " + GameManager.instance.mycombo, labelStyle);
+        GUILayout.Label("현재 HP : "+GameManager.instance.hp,labelStyle);
+        GUILayout.Label("Gold : " + GameManager.instance.Gold, labelStyle);
     }
     void StackUp()
     {
         
-        if (GameManager.combo.mycombo <= 999)
+        if (GameManager.instance.mycombo <= 999)
         {
-            GameManager.combo.mycombo += 30;
+            GameManager.instance.mycombo += 30;
+           
         } 
     }
     void Move()
@@ -173,8 +177,41 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-  
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("SkullSword") == true)
+        {
+            GameManager.instance.hp -= 10;
+            Debug.Log(GameManager.instance.hp);
+            if (GameManager.instance.hp>0)
+            {
+                effectDamageTween();
+            }
+        }
+    }
+    void effectDamageTween()
+    {
+        if (effectTweener != null && effectTweener.isComplete == false)
+        {
+            return;
+        }
+        else
+        {
+            Color colorTo = Color.red;
+
+            effectTweener = HOTween.To(skinnedMeshRenderer.material, 0.2f, new TweenParms()
+                                            //색상을 교체
+                                            .Prop("color", colorTo)
+                                            .Loops(1, LoopType.Yoyo)
+                                            .OnStepComplete(OnDamageTweenFinisheds)
+                                            );
+        }
+    }
+   void OnDamageTweenFinisheds()
+    {
+        skinnedMeshRenderer.material.color = Color.white;
+    }
     /// <summary>
     /// 애니메이션 재생 함수
     /// </summary>

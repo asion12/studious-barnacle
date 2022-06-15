@@ -327,7 +327,7 @@ public class a : MonoBehaviour
         else
         {
             Color colorTo = Color.red;
-             
+            Debug.Log("a");
             effectTweener = HOTween.To(skinnedMeshRenderer.material, 0.2f, new TweenParms()
                                             //색상을 교체
                                             .Prop("color",colorTo)
@@ -361,9 +361,12 @@ public class a : MonoBehaviour
             }
             else
             {
+                
                 Debug.Log("end");
                 skullState = SkullState.Die;
-                Destroy(gameObject, 5);
+                
+                Destroy(gameObject, 1);
+              
             }
         }
     }

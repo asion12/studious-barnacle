@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager combo = null;
-    // Start is called before the first frame update
+    public static GameManager instance = null;
+    public float mycombo = 1;
+    public int hp = 100;
+    public int Gold = 0;
+
     private void Awake()
     {
-        if (combo == null)
+        if (instance == null)
         {
-            combo = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            if (combo != this)
+            if (instance != this)
                 Destroy(gameObject);
         }
     }
-    public float mycombo = 1;
- 
 }
