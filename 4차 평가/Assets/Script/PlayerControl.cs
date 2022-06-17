@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Holoville.HOTween;
+using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
+
     //캐릭터 타격시 색 변환 준비
     private Tweener effectTweener = null;
     private SkinnedMeshRenderer skinnedMeshRenderer = null;
@@ -101,19 +103,24 @@ public class PlayerControl : MonoBehaviour
         var labelStyle = new GUIStyle();
         labelStyle.fontSize = 30;
         labelStyle.normal.textColor = Color.white;
-
+        
         GUILayout.Label("현재 콤보 : " + GameManager.instance.mycombo, labelStyle);
         GUILayout.Label("현재 HP : "+GameManager.instance.hp,labelStyle);
         GUILayout.Label("Gold : " + GameManager.instance.Gold, labelStyle);
+        GUILayout.Label("dam : " + GameManager.instance.damge, labelStyle);
     }
     void StackUp()
     {
         
         if (GameManager.instance.mycombo <= 999)
         {
-            GameManager.instance.mycombo += 30;
+            GameManager.instance.mycombo += 50;
            
         } 
+    }
+    private void printSomething(char a)
+    {
+        Debug.Log(a);
     }
     void Move()
     {
@@ -187,6 +194,11 @@ public class PlayerControl : MonoBehaviour
             if (GameManager.instance.hp>0)
             {
                 effectDamageTween();
+            }
+            else if(GameManager.instance.hp<0)
+            {
+               
+                SceneManager.LoadScene("Manu");
             }
         }
     }
@@ -310,6 +322,7 @@ public class PlayerControl : MonoBehaviour
                         if (animationPlayer[animationClipAtk_1.name].normalizedTime > 0.1f)
                         {
                             flagNextAttack = true;
+
                         }
                         break;
                     case PlayerAttackState.atkStep_2:
@@ -351,15 +364,19 @@ public class PlayerControl : MonoBehaviour
             {
                 case PlayerAttackState.atkStep_1:
                     playerAttackState = PlayerAttackState.atkStep_2;
+                    GameManager.instance.mycombo += 10;
                     break;
                 case PlayerAttackState.atkStep_2:
                     playerAttackState = PlayerAttackState.atkStep_3;
+                    GameManager.instance.mycombo += 10;
                     break;
                 case PlayerAttackState.atkStep_3:
                     playerAttackState = PlayerAttackState.atkStep_4;
+                    GameManager.instance.mycombo += 10;
                     break;
                 case PlayerAttackState.atkStep_4:
                     playerAttackState = PlayerAttackState.atkStep_1;
+                    GameManager.instance.mycombo += 10;
                     break;
             }
         }

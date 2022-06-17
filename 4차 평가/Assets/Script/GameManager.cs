@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public float mycombo = 1;
     public int hp = 100;
-    public int Gold = 0;
+    public int Gold = 1000000;
+    public int damge = 50;
 
     private void Awake()
     {

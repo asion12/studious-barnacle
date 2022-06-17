@@ -54,7 +54,7 @@ public class Nerp : MonoBehaviour
                             {
                                 if (GameManager.instance.mycombo > 100)
                                 {
-                                    GameManager.instance.mycombo=-100;
+                                    GameManager.instance.mycombo-=100;
                                     Debug.Log("a");
                                     HOTween.Init(true, true, true);
 

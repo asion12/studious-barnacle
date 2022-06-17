@@ -5,6 +5,7 @@ using Holoville.HOTween;
 
 public class a : MonoBehaviour
 {
+    public GameObject my = null;
     // Start is called before the first frame update
     //ÇØ°ñ »óÅÂ
     public enum SkullState { None, Idle, Move, Wait, GoTarget, Atk, Damage, Die }
@@ -349,7 +350,7 @@ public class a : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerAtk") == true)
         {
-            hp -= 50;
+            hp -= GameManager.instance.damge;
             Debug.Log(hp);
             if (hp > 0)
             {
@@ -364,9 +365,9 @@ public class a : MonoBehaviour
                 
                 Debug.Log("end");
                 skullState = SkullState.Die;
-                
+                GameManager.instance.Gold +=1000;
                 Destroy(gameObject, 1);
-              
+                my.SendMessage("printSomething", "d");
             }
         }
     }
