@@ -4,29 +4,39 @@ using UnityEngine;
 
 public class ShopingItem : MonoBehaviour
 {
-    
-   
+    public GameObject eff = null;
+    bool ByItem = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Buy1();
+      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Buy1();
+       
     }
     public void Buy1()
     {
-      
-            if (GameManager.instance.Gold > 10000)
+        ByItem = true;
+        if (ByItem==true)
+        {
+            if (GameManager.instance.Gold >= 10000)
             {
                 GameManager.instance.Gold -= 10000;
                 GameManager.instance.damge += 50;
                 GameManager.instance.sword += 1;
-                
+                GameManager.instance.skullhp += 100;
+                GameManager.instance.Item1 += 1;
+                GameManager.instance.a();
+                ByItem = false;
             }
+        }
+        
         
     
     }
@@ -37,15 +47,17 @@ public class ShopingItem : MonoBehaviour
             GameManager.instance.damge += 300;
             GameManager.instance.sword += 10;
             GameManager.instance.maxcombo += 100;
+            GameManager.instance.skullhp += 500;
         }
     }
     public void Buy3()
-    {
+    {//¹Ì»ç¿ë
         if (GameManager.instance.Gold > 100000)
         {
             GameManager.instance.damge += 10000;
             GameManager.instance.sword += 20;
             GameManager.instance.maxcombo += 500;
+            GameManager.instance.skullhp += 10000;
         }
     }
 

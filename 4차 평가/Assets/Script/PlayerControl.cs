@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour
     {
        
         Move();
-        a();
+        setGravity();
         BodyDirectionChange();
         AnimationClipCtrl();
         ckAnimationState();
@@ -114,7 +114,7 @@ public class PlayerControl : MonoBehaviour
     void StackUp()
     {
         
-        if (GameManager.instance.mycombo <= GameManager.instance.maxcombo)
+        if (GameManager.instance.mycombo <= GameManager.instance.maxcombo)                                       
         {
             GameManager.instance.mycombo += 50;
            
@@ -430,7 +430,10 @@ public class PlayerControl : MonoBehaviour
     }
     private float gravity = 9.8f;
     private float verticalSpd = 0f;
-    void a()
+    /// <summary>
+    ///  캐릭터 중력 설정
+    /// </summary>
+    void setGravity()
     {
         if ((collisionflages & CollisionFlags.CollidedBelow) != 0)
         {
@@ -438,7 +441,7 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
-            verticalSpd -= gravity + Time.deltaTime;
+            verticalSpd -= gravity * Time.deltaTime;
         }
     }
 }

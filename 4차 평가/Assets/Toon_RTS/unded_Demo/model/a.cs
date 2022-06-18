@@ -5,6 +5,7 @@ using Holoville.HOTween;
 
 public class a : MonoBehaviour
 {
+    public int hps = 100;
     public GameObject my = null;
     // Start is called before the first frame update
     //해골 상태
@@ -37,7 +38,7 @@ public class a : MonoBehaviour
 
     [Header("전투속성")]
     //해골 체력
-    public int hp = 100;
+    public int hp = 200;
     //해골 공격 거리
     public float AtkRange = 1.5f;
     //해골 피격 이펙트
@@ -84,6 +85,7 @@ public class a : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      
         //처음 상태 대기상태
         skullState = SkullState.Idle;
 
@@ -137,6 +139,7 @@ public class a : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         CkState();
         AnimationCtrl();
     }
@@ -350,9 +353,10 @@ public class a : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerAtk") == true)
         {
-            hp -= GameManager.instance.damge;
-            Debug.Log(hp);
-            if (hp > 0)
+            hps-=GameManager.instance.damge;
+            Debug.Log("적이 들어왔다! 빨강으로!");
+            Debug.Log(hps);
+            if (hps > 0)
             {
                
                 Instantiate(effectDamage, other.transform.position, Quaternion.identity);
@@ -365,9 +369,9 @@ public class a : MonoBehaviour
                 
                 Debug.Log("end");
                 skullState = SkullState.Die;
-                GameManager.instance.Gold +=1000;
+                GameManager.instance.Gold +=10000;
                 Destroy(gameObject, 1);
-                my.SendMessage("printSomething", "d");
+               
             }
         }
     }
@@ -383,9 +387,13 @@ public class a : MonoBehaviour
         {
             skullState = SkullState.GoTarget;
         }
-  
-    }
- 
 
+    }
+
+
+    void skullhpup()
+    {
+        
+    }
 
 }
