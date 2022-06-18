@@ -5,7 +5,7 @@ using Holoville.HOTween;
 using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
-
+ 
     //캐릭터 타격시 색 변환 준비
     private Tweener effectTweener = null;
     private SkinnedMeshRenderer skinnedMeshRenderer = null;
@@ -108,11 +108,13 @@ public class PlayerControl : MonoBehaviour
         GUILayout.Label("현재 HP : "+GameManager.instance.hp,labelStyle);
         GUILayout.Label("Gold : " + GameManager.instance.Gold, labelStyle);
         GUILayout.Label("dam : " + GameManager.instance.damge, labelStyle);
+        GUILayout.Label("검의 계수 : " + GameManager.instance.sword, labelStyle);
+        GUILayout.Label(" maxcombo : " + GameManager.instance.maxcombo, labelStyle);
     }
     void StackUp()
     {
         
-        if (GameManager.instance.mycombo <= 999)
+        if (GameManager.instance.mycombo <= GameManager.instance.maxcombo)
         {
             GameManager.instance.mycombo += 50;
            
