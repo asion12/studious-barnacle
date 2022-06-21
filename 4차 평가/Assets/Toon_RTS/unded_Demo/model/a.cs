@@ -6,7 +6,7 @@ using Holoville.HOTween;
 public class a : MonoBehaviour
 {
     public int hps = 100;
-    public GameObject my = null;
+   
     // Start is called before the first frame update
     //해골 상태
     public enum SkullState { None, Idle, Move, Wait, GoTarget, Atk, Damage, Die }
@@ -219,7 +219,8 @@ public class a : MonoBehaviour
                         //공격상태로 변경합니.
                         skullState = SkullState.Atk;
                         //플레이어 와 충돌시 hp담
-                 
+                        GameManager.instance.hp -= 10;
+                        
                        
                         //여기서 끝냄
                         return;

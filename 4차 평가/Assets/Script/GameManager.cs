@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
     
     public static GameManager instance = null;
     public float mycombo = 1;
-    public int hp = 100;
+    public int hp = 200;
     public int Gold = 1000000;
     public int damge = 50;
     public int sword = 0;
     public int maxcombo = 900;
     public int skullhp = 100;
-
+    public int popo = 0;
     public int Item1 = 0;
     public int Item2 = 0;
     public int Item3 = 0;

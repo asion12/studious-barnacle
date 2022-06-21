@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ShopingItem : MonoBehaviour
 {
+    public Image ons = null;
     public GameObject eff = null;
     bool ByItem = false;
 
@@ -34,12 +35,19 @@ public class ShopingItem : MonoBehaviour
                 GameManager.instance.Item1 += 1;
                 GameManager.instance.a();
                 ByItem = false;
+
+            }else
+            {
+                ons.gameObject.SetActive(true);
+               
+                
             }
         }
         
         
     
     }
+    
     public void Buy2()
     {
         if (GameManager.instance.Gold > 50000)

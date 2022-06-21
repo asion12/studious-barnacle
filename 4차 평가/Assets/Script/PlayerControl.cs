@@ -110,6 +110,7 @@ public class PlayerControl : MonoBehaviour
         GUILayout.Label("dam : " + GameManager.instance.damge, labelStyle);
         GUILayout.Label("검의 계수 : " + GameManager.instance.sword, labelStyle);
         GUILayout.Label(" maxcombo : " + GameManager.instance.maxcombo, labelStyle);
+        GUILayout.Label(" 캐릭터 피 : " + GameManager.instance.hp, labelStyle);
     }
     void StackUp()
     {
@@ -120,10 +121,7 @@ public class PlayerControl : MonoBehaviour
            
         } 
     }
-    private void printSomething(char a)
-    {
-        Debug.Log(a);
-    }
+
     void Move()
     {
         //메인카메라 Transform
@@ -187,45 +185,7 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("SkullSword") == true)
-        {
-            GameManager.instance.hp -= 10;
-            Debug.Log(GameManager.instance.hp);
-            if (GameManager.instance.hp>0)
-            {
-                effectDamageTween();
-            }
-            else if(GameManager.instance.hp<0)
-            {
-               
-                SceneManager.LoadScene("Manu");
-            }
-        }
-    }
-    void effectDamageTween()
-    {
-        if (effectTweener != null && effectTweener.isComplete == false)
-        {
-            return;
-        }
-        else
-        {
-            Color colorTo = Color.red;
-
-            effectTweener = HOTween.To(skinnedMeshRenderer.material, 0.2f, new TweenParms()
-                                            //색상을 교체
-                                            .Prop("color", colorTo)
-                                            .Loops(1, LoopType.Yoyo)
-                                            .OnStepComplete(OnDamageTweenFinisheds)
-                                            );
-        }
-    }
-   void OnDamageTweenFinisheds()
-    {
-        skinnedMeshRenderer.material.color = Color.white;
-    }
+  
     /// <summary>
     /// 애니메이션 재생 함수
     /// </summary>
