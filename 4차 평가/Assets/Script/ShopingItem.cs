@@ -33,6 +33,8 @@ public class ShopingItem : MonoBehaviour
                 GameManager.instance.sword += 1;
                 GameManager.instance.skullhp += 100;
                 GameManager.instance.Item1 += 1;
+                GameManager.instance.Item2 = 0;
+                GameManager.instance.Item3 = 0;
                 GameManager.instance.a();
                 ByItem = false;
 
@@ -56,6 +58,9 @@ public class ShopingItem : MonoBehaviour
             GameManager.instance.sword += 10;
             GameManager.instance.maxcombo += 100;
             GameManager.instance.skullhp += 500;
+            GameManager.instance.Item2 += 1;
+            GameManager.instance.Item1 = 0;
+            GameManager.instance.Item3 = 0;
         }
     }
     public void Buy3()
@@ -66,6 +71,9 @@ public class ShopingItem : MonoBehaviour
             GameManager.instance.sword += 20;
             GameManager.instance.maxcombo += 500;
             GameManager.instance.skullhp += 10000;
+            GameManager.instance.Item3 += 1;
+            GameManager.instance.Item2 = 0;
+            GameManager.instance.Item1 = 0;
         }
     }
 
