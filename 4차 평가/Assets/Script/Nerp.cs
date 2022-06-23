@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Holoville.HOTween;
+using UnityEngine.UI;
 public class Nerp : MonoBehaviour
 {
+    public Text text = null;
     //지정이잖아
     RaycastHit Hit;
     public float distanstHit = 3f;
@@ -24,8 +26,9 @@ public class Nerp : MonoBehaviour
     }
     void Update()
     {
-       
-        
+        yesgood();
+
+
         if (Physics.Raycast(transform.position,transform.forward,out Hit,distanstHit))
         {
             //나와 적의 거리체크
@@ -44,9 +47,11 @@ public class Nerp : MonoBehaviour
 
                 if (degree <= angleRange / 2f)
                 {
-                        isCollision = true;
+                   
+                       isCollision = true;
                        if (isCollision == true) 
                       {
+                        
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
                             coms = true;
@@ -77,7 +82,7 @@ public class Nerp : MonoBehaviour
 
                 else
                     isCollision = false;
-
+                
             }
             else
                 isCollision = false;
@@ -85,7 +90,18 @@ public class Nerp : MonoBehaviour
     }
      
   
-
+    void yesgood()
+    {
+        if (isCollision == true)
+        {
+            text.text = "스킬 사용 가능!";
+        }
+        else
+        {
+            text.text = "안됭-!";
+        }
+       
+    }
     private void OnDrawGizmos()
     {
         Handles.color = isCollision ? _red : _blue;

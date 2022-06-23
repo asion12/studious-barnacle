@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
  
-    //캐릭터 타격시 색 변환 준비
-    private Tweener effectTweener = null;
-    private SkinnedMeshRenderer skinnedMeshRenderer = null;
     [Header("속성")]
     //캐릭터 이동속도 설정
     [Tooltip("캐릭터 이동속도 설정")]
@@ -85,7 +82,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-       
+        die();
         Move();
         setGravity();
         BodyDirectionChange();
@@ -147,7 +144,8 @@ public class PlayerControl : MonoBehaviour
             spd = runMoveSpd;
         }
         //이동하는 프레임 양
-        Vector3 moveAmount = (MoveDirect * spd * Time.deltaTime);
+        Vector3 vecGravity = new Vector3(0f, verticalSpd, 0f);
+        Vector3 moveAmount = (MoveDirect * spd * Time.deltaTime) + vecGravity;
         //실제 이동
         collisionflages = characterCtrl.Move(moveAmount);
     }
@@ -390,6 +388,7 @@ public class PlayerControl : MonoBehaviour
     }
     private float gravity = 9.8f;
     private float verticalSpd = 0f;
+   
     /// <summary>
     ///  캐릭터 중력 설정
     /// </summary>
@@ -403,5 +402,11 @@ public class PlayerControl : MonoBehaviour
         {
             verticalSpd -= gravity * Time.deltaTime;
         }
+    }
+    void die()
+    {
+        if (GameManager.instance.hp<=0 ) {
+            SceneManager.LoadScene("a");
+        } 
     }
 }

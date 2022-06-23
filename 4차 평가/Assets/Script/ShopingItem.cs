@@ -12,7 +12,9 @@ public class ShopingItem : MonoBehaviour
     void Start()
     {
         Buy1();
-      
+        Buy2();
+        Buy3();
+        setmoney();
 
     }
 
@@ -35,7 +37,7 @@ public class ShopingItem : MonoBehaviour
                 GameManager.instance.Item1 += 1;
                 GameManager.instance.Item2 = 0;
                 GameManager.instance.Item3 = 0;
-                GameManager.instance.a();
+                GameManager.instance.eff1();
                 ByItem = false;
 
             }else
@@ -52,29 +54,59 @@ public class ShopingItem : MonoBehaviour
     
     public void Buy2()
     {
-        if (GameManager.instance.Gold > 50000)
+        ByItem = true;
+        if (ByItem==true)
         {
-            GameManager.instance.damge += 300;
-            GameManager.instance.sword += 10;
-            GameManager.instance.maxcombo += 100;
-            GameManager.instance.skullhp += 500;
-            GameManager.instance.Item2 += 1;
-            GameManager.instance.Item1 = 0;
-            GameManager.instance.Item3 = 0;
+            if (GameManager.instance.Gold > 50000)
+            {
+                GameManager.instance.Gold -= 50000;
+                GameManager.instance.damge += 200;
+                GameManager.instance.sword += 10;
+                GameManager.instance.maxcombo += 100;
+                GameManager.instance.skullhp += 500;
+                GameManager.instance.Item2 += 1;
+                GameManager.instance.Item1 = 0;
+                GameManager.instance.Item3 = 0;
+                GameManager.instance.eff22();
+                ByItem = false;
+            }
+            else
+            {
+                ons.gameObject.SetActive(true);
+
+            }
         }
+       
+
     }
     public void Buy3()
-    {//¹Ì»ç¿ë
-        if (GameManager.instance.Gold > 100000)
+    {
+        ByItem = true;
+        if (ByItem == true)
         {
-            GameManager.instance.damge += 10000;
-            GameManager.instance.sword += 20;
-            GameManager.instance.maxcombo += 500;
-            GameManager.instance.skullhp += 10000;
-            GameManager.instance.Item3 += 1;
-            GameManager.instance.Item2 = 0;
-            GameManager.instance.Item1 = 0;
-        }
-    }
+            if (GameManager.instance.Gold > 100000)
+            {
+                GameManager.instance.Gold -= 100000;
+                GameManager.instance.damge += 500;
+                GameManager.instance.sword += 20;
+                GameManager.instance.maxcombo += 500;
+                GameManager.instance.skullhp += 10000;
+                GameManager.instance.Item3 += 1;
+                GameManager.instance.Item2 = 0;
+                GameManager.instance.Item1 = 0;
+                GameManager.instance.eff33();
+                ByItem = false;
+            }
+            else
+            {
+                ons.gameObject.SetActive(true);
 
+            }
+        }
+     
+    }
+    public void setmoney()
+    {
+        GameManager.instance.Gold += 100000000;
+    }
 }
