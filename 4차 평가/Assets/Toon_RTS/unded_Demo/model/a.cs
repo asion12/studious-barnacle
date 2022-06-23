@@ -221,7 +221,7 @@ public class a : MonoBehaviour
                         skullState = SkullState.Atk;
                         //플레이어 와 충돌시 hp담
 
-                        GameManager.instance.hp -= 10;
+                        GameManager.instance.hp -= 1;
                         
                        
                         //여기서 끝냄
