@@ -49,6 +49,6 @@ public class spawMonster : MonoBehaviour
     private void Start()
     {
         //반복적으로 몬스터를 만든다 InvokeRepeating
-        InvokeRepeating("Spawn", 3f, 5f);
+        InvokeRepeating("Spawn", 3f, 10f);
     }
 }
