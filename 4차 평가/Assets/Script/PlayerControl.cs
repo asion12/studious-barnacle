@@ -5,7 +5,7 @@ using Holoville.HOTween;
 using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
- 
+    public Transform gameobj = null;
     [Header("속성")]
     //캐릭터 이동속도 설정
     [Tooltip("캐릭터 이동속도 설정")]
@@ -82,6 +82,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        skill();
         die();
         Move();
         setGravity();
@@ -109,16 +110,7 @@ public class PlayerControl : MonoBehaviour
         GUILayout.Label(" maxcombo : " + GameManager.instance.maxcombo, labelStyle);
         GUILayout.Label(" 캐릭터 피 : " + GameManager.instance.hp, labelStyle);
     }
-    void StackUp()
-    {
-        
-        if (GameManager.instance.mycombo <= GameManager.instance.maxcombo)                                       
-        {
-            GameManager.instance.mycombo += 50;
-           
-        } 
-    }
-
+   
     void Move()
     {
         //메인카메라 Transform
@@ -401,6 +393,15 @@ public class PlayerControl : MonoBehaviour
         else
         {
             verticalSpd -= gravity * Time.deltaTime;
+        }
+    }
+
+    void skill()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log("올라간다!!!");
+            gameobj.position =new Vector3(gameobj.position.x, gameobj.position.y + 10, gameobj.position.z);
         }
     }
     void die()

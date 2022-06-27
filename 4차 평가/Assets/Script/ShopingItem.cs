@@ -60,7 +60,7 @@ public class ShopingItem : MonoBehaviour
             if (GameManager.instance.Gold > 50000)
             {
                 GameManager.instance.Gold -= 50000;
-                GameManager.instance.damge += 200;
+                GameManager.instance.damge += 150;
                 GameManager.instance.sword += 10;
                 GameManager.instance.maxcombo += 100;
                 GameManager.instance.skullhp += 500;

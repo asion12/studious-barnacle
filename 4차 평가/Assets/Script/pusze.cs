@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class pusze : MonoBehaviour
 {
     public Image tuto = null;
+    public Image tuto2 = null;
     bool Imagesetup = false;
     void Start()
     {
         tuto.gameObject.SetActive(false);
-    
+        tuto2.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class pusze : MonoBehaviour
             {
                 Debug.Log("¿ÖÁö");
                 tuto.gameObject.SetActive(true);
+                tuto2.gameObject.SetActive(true);
                 Time.timeScale = 0f;
 
             }
