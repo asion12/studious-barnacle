@@ -367,8 +367,7 @@ MonoBehaviour:
   monsterSpawner: {fileID: 670278591671322903, guid: dbfafbb0031b7364dafbe41738c3ebf2, type: 3}
   monsters:
   - {fileID: 0}
-  - {fileID: 0}
-  spawnMaxCnt: 3
+  spawnMaxCnt: 2
 --- !u!4 &47756415
 Transform:
   m_ObjectHideFlags: 0
@@ -377,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47756413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.84088, y: 4.3825326, z: 116.134796}
+  m_LocalPosition: {x: 295.3, y: 4.3825326, z: 81.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2081,7 +2080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 230.37
+      value: 272.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2089,23 +2088,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 104.61
+      value: 71.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.63342667
+      value: 0.28110668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.63342667
+      value: -0.28110668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.31427804
+      value: -0.648829
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.31427804
+      value: -0.648829
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2117,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -52.777
+      value: -133.15
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 743d1f6b9190cc84db59988ae5c8d3f4, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2610,8 +2609,7 @@ MonoBehaviour:
   monsterSpawner: {fileID: 670278591671322903, guid: dbfafbb0031b7364dafbe41738c3ebf2, type: 3}
   monsters:
   - {fileID: 0}
-  - {fileID: 0}
-  spawnMaxCnt: 3
+  spawnMaxCnt: 2
 --- !u!4 &804617722
 Transform:
   m_ObjectHideFlags: 0
@@ -2620,7 +2618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804617720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 265.2, y: 4.3825326, z: 108.9}
+  m_LocalPosition: {x: 265.2, y: 4.3825326, z: 83.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4644,13 +4642,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812658750}
-  m_LocalRotation: {x: 0.66367865, y: -0.24398905, z: 0.24398905, w: 0.66367865}
-  m_LocalPosition: {x: 323.94, y: 6.0643787, z: 69.93}
+  m_LocalRotation: {x: -0.010496584, y: -0.7070289, z: 0.7070289, w: -0.010496584}
+  m_LocalPosition: {x: 271.3, y: 6.0643787, z: 115.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 40.37}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 181.701}
 --- !u!114 &1812658755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5399,8 +5397,7 @@ MonoBehaviour:
   monsterSpawner: {fileID: 670278591671322903, guid: dbfafbb0031b7364dafbe41738c3ebf2, type: 3}
   monsters:
   - {fileID: 0}
-  - {fileID: 0}
-  spawnMaxCnt: 3
+  spawnMaxCnt: 2
 --- !u!4 &2110473691
 Transform:
   m_ObjectHideFlags: 0
@@ -6663,8 +6660,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840310607976264880}
-  m_LocalRotation: {x: -0, y: 0.92625636, z: -0, w: 0.37689424}
-  m_LocalPosition: {x: 226, y: 1.58, z: 111.35}
+  m_LocalRotation: {x: -0, y: 0.4627529, z: -0, w: 0.8864873}
+  m_LocalPosition: {x: 267.7, y: 1.58, z: 66.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 840310607976425844}
@@ -6675,7 +6672,7 @@ Transform:
   - {fileID: 1607791871}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 135.717, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 55.13, z: 0}
 --- !u!4 &840310607976425682
 Transform:
   m_ObjectHideFlags: 0

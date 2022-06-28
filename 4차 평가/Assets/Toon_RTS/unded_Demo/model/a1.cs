@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Holoville.HOTween;
 
-public class a : MonoBehaviour
+public class a1 : MonoBehaviour
 {
     public int hps = 200;
     public int dam = 1;
