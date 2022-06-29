@@ -7,7 +7,7 @@ public class a : MonoBehaviour
 {
     public int hps = 200;
     public int dam = 1;
-   
+    private AudioSource audioss;
     // Start is called before the first frame update
     //해골 상태
     public enum SkullState { None, Idle, Move, Wait, GoTarget, Atk, Damage, Die }
@@ -86,10 +86,10 @@ public class a : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
-        
-        //처음 상태 대기상태
-        skullState = SkullState.Idle;
+        audioss = GetComponent<AudioSource>();
+
+           //처음 상태 대기상태
+           skullState = SkullState.Idle;
 
         //애니메이, 트랜스폼 컴포넌트 캐싱 : 쓸때마다 찾아 만들지 않게
         skullAnimation = GetComponent<Animation>();
@@ -101,10 +101,10 @@ public class a : MonoBehaviour
         skullAnimation[AtkAnimClip.name].wrapMode = WrapMode.Once;
         skullAnimation[DamageAnimClip.name].wrapMode = WrapMode.Once;
 
-        //애니메이션 블랜딩 위해 크게 올림
-        skullAnimation[DamageAnimClip.name].layer = 10;
-        skullAnimation[DieAnimClip.name].wrapMode = WrapMode.Once;
-        skullAnimation[DieAnimClip.name].layer = 10;
+        ////애니메이션 블랜딩 위해 크게 올림
+        //skullAnimation[DamageAnimClip.name].layer = 10;
+        //skullAnimation[DieAnimClip.name].wrapMode = WrapMode.Once;
+        //skullAnimation[DieAnimClip.name].layer = 10;
 
         //공격 애니메이션 이벤트 추가
         OnAnimationEvent(AtkAnimClip, "OnAtkAnmationFinished");
@@ -221,8 +221,8 @@ public class a : MonoBehaviour
                         //공격상태로 변경합니.
                         skullState = SkullState.Atk;
                         //플레이어 와 충돌시 hp담
-
-                       GameManager.instance.hp -= dam;
+                        GameManager.instance.hp -= 4;
+                      
                         
                        
                         //여기서 끝냄
@@ -296,6 +296,7 @@ public class a : MonoBehaviour
                 break;
             //공격할 때
             case SkullState.Atk:
+                
                 //공격 애니메이션 실행
                 skullAnimation.CrossFade(AtkAnimClip.name);
                 break;
@@ -370,7 +371,7 @@ public class a : MonoBehaviour
                 effectDamageTween();
 
             }
-            else
+            else if(hps<=0)
             {
                 
                 Debug.Log("end");
@@ -378,6 +379,7 @@ public class a : MonoBehaviour
                 GameManager.instance.Gold +=1000;
                 GameManager.instance.everyMonsters.Remove(this.gameObject);
                 UIManager.Instance.SetText(GameManager.instance.everyMonsters.Count.ToString());
+                audioss.Play();
                 Destroy(gameObject, 1);
                
             }

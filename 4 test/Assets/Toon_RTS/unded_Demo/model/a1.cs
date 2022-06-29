@@ -7,6 +7,7 @@ public class a1 : MonoBehaviour
 {
     public int hps = 200;
     public int dam = 1;
+    private AudioSource audi;
    
     // Start is called before the first frame update
     //해골 상태
@@ -57,8 +58,8 @@ public class a1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
-        
+
+        audi = GetComponent<AudioSource>();
         //처음 상태 대기상태
         skullState = SkullState.Idle;
 
@@ -179,6 +180,7 @@ public class a1 : MonoBehaviour
                     {
                         //공격상태로 변경합니.
                         skullState = SkullState.Atk;
+
                         //플레이어 와 충돌시 hp담
 
                        GameManager.instance.hp -= dam;
@@ -277,7 +279,9 @@ public class a1 : MonoBehaviour
                 GameManager.instance.Gold += 1000;
                 GameManager.instance.everyMonsters.Remove(this.gameObject);
                 UIManager.Instance.SetText(GameManager.instance.everyMonsters.Count.ToString());
+                audi.Play();
                 Destroy(gameObject, 1);
+               
                
             }
         }
